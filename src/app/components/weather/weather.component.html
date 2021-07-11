@@ -1,0 +1,3 @@
+<!-- <input type="text" [formControl]="weatherInputControl"> -->
+<input ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [formControl]="weatherInputControl"/>
+
