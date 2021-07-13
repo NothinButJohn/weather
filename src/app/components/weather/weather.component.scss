@@ -1,0 +1,65 @@
+body {
+  background: url("../../../assets/clouds.jpg") no-repeat scroll center;
+  background-size: cover;
+}
+
+.location__search{
+  text-align: center;
+  color: white;
+  outline: white;
+  outline-style: auto;
+  outline-offset: 8px;
+}
+.location__search__field{
+  display: grid;
+}
+
+
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+h2{
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  text-align: center;
+}
+
+h4{
+  color:white;
+  font-size: xx-small;
+}
+
+.current__weather__header{
+  display: grid;
+  text-align: center;
+  margin-top: 3ch;
+}
+
+
+.sevenDay__weather__container{
+  display: grid;
+  grid-template-columns: 70px auto auto 70px;
+  grid-template-rows: 70px 70px 70px 70px 70px 70px 70px;
+  .sevenDay__weather__info{
+    display: inherit;
+    // grid-auto-flow: row;
+    // grid-area:  / 1 / 7 / 4;
+    grid-template-columns:  20px 5px 5px;
+    grid-template-rows: 10px 10px;
+  }
+  .sevenDay__weather__description{
+    display: inherit;
+    // grid-area: 1/ 1/ 2/ 2;
+  }
+  .sevenDay__weather__minMax{
+    display: inherit;
+    // grid-area: 1, 2, 2, 3;
+  }
+}

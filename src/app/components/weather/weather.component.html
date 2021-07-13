@@ -1,3 +1,42 @@
 <!-- <input type="text" [formControl]="weatherInputControl"> -->
-<input ngx-google-places-autocomplete #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)" [formControl]="weatherInputControl"/>
+
+
+<body>
+  <mat-form-field appearance="fill" class="location__search__field">
+    <input matInput ngx-google-places-autocomplete #placesRef="ngx-places"
+    (onAddressChange)="handleAddressChange($event)"
+    [formControl]="weatherInputControl"
+    class="location__search"
+    />
+  </mat-form-field>
+
+  <div class="main__content" *ngIf="weather | async as weather">
+    <div *ngIf="location !== ''" class="current__weather__header">
+      <h1>{{location}}</h1>
+      <div>
+        <h3>{{weather.current.desc}}</h3>
+        <div>
+          <h2>{{weather.current.temp}}</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sevenDay__weather__container">
+      <div *ngFor="let day of weather.daily; let i = index" (onload)="assignGridProp(i)" >
+        <div class="sevenDay__weather__info" id="weatherInfo-{{i}}">
+          <div class="sevenDay__weather__description" >
+            <h4>{{day.weather[0].description}}</h4>
+          </div>
+          <div class="sevenDay__weather__minMax">
+            <div><h4>{{day.temp.min}}</h4></div>
+            <div><h4>{{day.temp.max}}</h4></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</body>
 

@@ -8,7 +8,10 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
-
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,11 @@ import { GooglePlaceModule } from "ngx-google-places-autocomplete";
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    GooglePlaceModule
+    GooglePlaceModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
